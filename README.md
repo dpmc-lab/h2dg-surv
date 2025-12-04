@@ -1,11 +1,12 @@
-# 🧪🔬🎯 Replicating Patient Follow-Up with Hierarchical Directed Graphs for Head and Neck Cancer Survival Analysis
-
+<p align="center">
+  <h2 align="center">[MIDL 2026] Replicating Patient Follow-Up with Hierarchical Directed Graphs for Head and Neck Cancer Survival Analysis 🧪🔬🎯</h2>
+</p>
 
 📄 Officiel implementation for the **paper submitted for MIDL 2026**: [arXiv submission](https://arxiv.org/abs/2404.06207)
 
 ---
 
-## 🧩 Method Overview
+### 🧩 Method Overview
 
 We propose **HDHGSurv** (Hierarchical Directed Heterogeneous Graph), a Graph Neural Network architecture for multimodal survival prediction that models the clinical pathway as a directed heterogeneous graph with temporal progression.
 
@@ -15,9 +16,9 @@ We propose **HDHGSurv** (Hierarchical Directed Heterogeneous Graph), a Graph Neu
 
 ---
 
-## 🚀 Getting Started
+### 🚀 Getting Started
 
-### Installation
+#### Installation
 
 **Requirements:** Python 3.12+
 
@@ -30,7 +31,7 @@ cd h2dg-surv
 pip install -r requirements.txt
 ```
 
-### 📂 Dataset Preparation
+#### 📂 Dataset Preparation
 
 1. Download the [HANCOCK dataset](https://www.hancock.research.uni-erlangen.org/download)
 2. Place it in `./data/HANCOCK/`
@@ -65,9 +66,9 @@ python main.py folds --data_root ./data/HANCOCK --n_folds 5 --random_seed 42
 
 ---
 
-## Training
+### Training
 
-### Basic Usage
+#### Basic Usage
 
 ```bash
 python main.py train --config config/train/hdhg.yaml
@@ -77,7 +78,7 @@ python main.py train --help
 ```
 ---
 
-## Evaluation
+### Evaluation
 
 ```bash
 python main.py eval --checkpoint-dirs [checkpoint-dirs]
@@ -85,7 +86,7 @@ python main.py eval --checkpoint-dirs [checkpoint-dirs]
 
 ---
 
-## 🙌 Acknowledgments
+### 🙌 Acknowledgments
 
 We acknowledge [Kist et al. 2024](https://www.nature.com/articles/s41597-024-03596-3) for making the HANCOCK dataset available.
 
@@ -96,7 +97,7 @@ We acknowledge [Kist et al. 2024](https://www.nature.com/articles/s41597-024-035
 
 ---
 
-## 🔗 Citation
+### 🔗 Citation
 
 > [!IMPORTANT]  
 > This project is based on the work by Miccinilli and Di Piazza 2025. If you use this code in your research, we would appreciate reference to the following paper:

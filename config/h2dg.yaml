@@ -69,7 +69,7 @@ training:
   
   # Checkpoint configuration
   checkpoints:
-    checkpoint_dir: "results/hdhg/contrib"
+    checkpoint_dir: "results/h2dg/contrib"
     patience: 10             
     delta: 0.0
     save_interval: 1
