@@ -2,7 +2,7 @@
   <h2 align="center">[MIDL 2026] Replicating Patient Follow-Up with Hierarchical Directed Graphs for Head and Neck Cancer Survival Analysis 🧪🔬🎯</h2>
 </p>
 
-📄 Officiel implementation for the **paper submitted for MIDL 2026**: [arXiv submission](https://arxiv.org/abs/2404.06207)
+📄 Official implementation for the **paper submitted for MIDL 2026**: [arXiv submission](https://arxiv.org/abs/2404.06207)
 
 ---
 
@@ -103,7 +103,7 @@ We acknowledge [Kist et al. 2024](https://www.nature.com/articles/s41597-024-035
 > This project is based on the work by Miccinilli and Di Piazza 2025. If you use this code in your research, we would appreciate reference to the following paper:
 
 ```BibTeX
-@inproceedings{mcdp2025hdhg,
+@inproceedings{mcdp2025h2dg,
   author    = {Hugo Miccinilli and Theo Di Piazza},
   title     = {Replicating Patient Follow-Up with Hierarchical Directed Graphs for Head and Neck Cancer Survival Analysis},
   booktitle = {Arxiv preprint},
