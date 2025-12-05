@@ -38,8 +38,6 @@ pip install -r requirements.txt
 
 #### Splits Preparation
 
-You have two options to obtain the dataset splits:
-
 **Option 1: Download pre-computed splits from Hugging Face**
 
 Download the splits directly from our [🤗 Hugging Face repository](https://huggingface.co/dpmc/h2dg-surv)
