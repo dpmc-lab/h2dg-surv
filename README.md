@@ -36,6 +36,22 @@ pip install -r requirements.txt
 1. Download the [HANCOCK dataset](https://www.hancock.research.uni-erlangen.org/download)
 2. Place it in `./data/HANCOCK/`
 
+#### Splits Preparation
+
+You have two options to obtain the dataset splits:
+
+**Option 1: Download pre-computed splits from Hugging Face**
+
+Download the splits directly from our [🤗 Hugging Face repository](https://huggingface.co/dpmc/h2dg-surv)
+
+Place the downloaded `folds_5.csv` in `./data/HANCOCK/Split/`
+
+**Option 2: Generate splits from scratch**
+
+```bash
+python main.py folds --data_root ./data/HANCOCK --n_folds 5 --random_seed 42
+```
+
 #### Dataset Structure
 
 ```
@@ -56,12 +72,6 @@ data/HANCOCK/
 │   └── WSI_PrimaryTumor_*/
 └── Split/
     └── folds_5.csv
-```
-
-#### Build K-Folds (Optional)
-
-```bash
-python main.py folds --data_root ./data/HANCOCK --n_folds 5 --random_seed 42
 ```
 
 ---
