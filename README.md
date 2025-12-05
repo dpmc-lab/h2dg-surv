@@ -8,7 +8,7 @@
 
 ### 🧩 Method Overview
 
-We propose **H2DGSurv** (Hierarchical Directed Heterogeneous Graph), a Graph Neural Network architecture for multimodal survival prediction that models the clinical pathway as a directed heterogeneous graph with temporal progression.
+We propose **H2DGSurv** (Hierarchical Heterogeneous Directed Graph), a Graph Neural Network architecture for multimodal survival prediction that models the clinical pathway as a directed heterogeneous graph with temporal progression.
 
 <p align="center">
   <img src="./figures/method_overview.png" alt="Method Overview" width="800">
