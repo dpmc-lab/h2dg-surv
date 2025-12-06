@@ -1,8 +1,10 @@
 <p align="center">
-  <h2 align="center">[MIDL 2026] Replicating Patient Follow-Up with Hierarchical Directed Graphs for Head and Neck Cancer Survival Analysis 🧪🔬🎯</h2>
+  <h2 align="center">[Under review] Replicating Patient Follow-Up with Hierarchical Directed Graphs for Head and Neck Cancer Survival Analysis 🧪🔬🎯</h2>
 </p>
 
-📄 Official implementation for the **paper submitted for MIDL 2026**: [arXiv submission](https://arxiv.org/abs/2404.06207)
+✅ Official implementation of the paper "Replicating Patient Follow-Up with Hierarchical Directed Graphs for Head and Neck Cancer Survival Analysis".
+
+📄 Preprint, under review for MIDL 2026: [arXiv submission coming soon].
 
 ---
 
