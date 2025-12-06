@@ -4,7 +4,7 @@
 
 ✅ Official implementation of the paper "Replicating Patient Follow-Up with Hierarchical Directed Graphs for Head and Neck Cancer Survival Analysis".
 
-📄 Preprint, under review for MIDL 2026: [arXiv submission coming soon].
+📄 Preprint, under review for MIDL 2026: [arXiv preprint coming soon].
 
 ---
 
