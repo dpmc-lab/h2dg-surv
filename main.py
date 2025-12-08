@@ -9,7 +9,7 @@ Usage Examples:
    python main.py train --config config/h2dg.yaml --k 2
 
 2. Evaluation:
-   python main.py eval --checkpoint-dirs results/h2dg/contrib/CV_5/fold_1/2025-01-01_00-00-00
+   python main.py eval --checkpoint-dirs results/hdhg/contrib/CV_5/fold_1/2025-01-01_00-00-00
 
 3. K-Folds builder:
     python main.py folds --data_root ./data/HANCOCK --random_seed 42 --n_folds 5

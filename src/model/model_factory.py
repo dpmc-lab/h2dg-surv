@@ -2,7 +2,7 @@ import torch.nn as nn
 from typing import Dict
 
 from src.utils.config import ModelConfig, DataConfig
-from src.model.hierarchical_directed_survival_gnn_logistic_hazard import HierarchicalDirectedSurvivalGNNLogisticHazard
+from src.model.h2dg_surv_logistic_hazard import H2DGSurvLogisticHazard
 
 
 class ModelFactory:
@@ -13,7 +13,7 @@ class ModelFactory:
     
     # Registry of available models
     _MODELS = {
-        "hierarchical_directed_survival_gnn_logistic_hazard": HierarchicalDirectedSurvivalGNNLogisticHazard,
+        "h2dg_surv": H2DGSurvLogisticHazard,
     }
     
     @staticmethod

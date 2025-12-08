@@ -3,16 +3,16 @@ from torch_geometric.data import Batch
 from typing import Optional, List
 
 from src.data.datamodule.datamodule import HANCOCKDataModule
-from src.data.dataset.hierarchical_directed_survival_graph_dataset import HierarchicalDirectedSurvivalGraphDataset
+from src.data.dataset.h2dg_surv_dataset import H2DGSurvDataset
 from src.data.dataset.dataset import Dataset
 
 
-class HierarchicalDirectedSurvivalGraphDataModule(HANCOCKDataModule):
+class H2DGSurvDataModule(HANCOCKDataModule):
     """
-    Lightning DataModule for hierarchical directed survival graphs.
+    Lightning DataModule for the heterogeneous hierarchical directed survival graph (h2dg_surv).
     
     Inherits all preprocessing from HANCOCKDataModule.
-    Overrides setup() to wrap datasets in HierarchicalDirectedSurvivalGraphDataset.
+    Wraps base datasets into PyG heterogeneous graphs via H2DGSurvDataset.
     """
     
     def __init__(self, aggregate_images: bool = True, **kwargs):
@@ -42,33 +42,33 @@ class HierarchicalDirectedSurvivalGraphDataModule(HANCOCKDataModule):
         
         # Now wrap the datasets to return HeteroData instead of tuples (only if not already wrapped)
         needs_wrapping = (
-            (self.train_dataset is not None and not isinstance(self.train_dataset, HierarchicalDirectedSurvivalGraphDataset)) or
-            (self.val_dataset is not None and not isinstance(self.val_dataset, HierarchicalDirectedSurvivalGraphDataset)) or
-            (self.test_dataset is not None and not isinstance(self.test_dataset, HierarchicalDirectedSurvivalGraphDataset))
+            (self.train_dataset is not None and not isinstance(self.train_dataset, H2DGSurvDataset)) or
+            (self.val_dataset is not None and not isinstance(self.val_dataset, H2DGSurvDataset)) or
+            (self.test_dataset is not None and not isinstance(self.test_dataset, H2DGSurvDataset))
         )
         
         if needs_wrapping:
-            print("\n>>> Converting to HierarchicalDirectedSurvivalGraph datasets...")
+            print("\n>>> Converting to H2DGSurv datasets...")
         
-        if self.train_dataset is not None and not isinstance(self.train_dataset, HierarchicalDirectedSurvivalGraphDataset):
+        if self.train_dataset is not None and not isinstance(self.train_dataset, H2DGSurvDataset):
             self.train_dataset = self._wrap_as_hetero_dataset(self.train_dataset)
             print(f"   - Train: {len(self.train_dataset)} patient graphs")
         
-        if self.val_dataset is not None and not isinstance(self.val_dataset, HierarchicalDirectedSurvivalGraphDataset):
+        if self.val_dataset is not None and not isinstance(self.val_dataset, H2DGSurvDataset):
             self.val_dataset = self._wrap_as_hetero_dataset(self.val_dataset)
             print(f"   - Val: {len(self.val_dataset)} patient graphs")
         
-        if self.test_dataset is not None and not isinstance(self.test_dataset, HierarchicalDirectedSurvivalGraphDataset):
+        if self.test_dataset is not None and not isinstance(self.test_dataset, H2DGSurvDataset):
             self.test_dataset = self._wrap_as_hetero_dataset(self.test_dataset)
             print(f"   - Test: {len(self.test_dataset)} patient graphs")
     
-    def _wrap_as_hetero_dataset(self, base_dataset: Dataset) -> HierarchicalDirectedSurvivalGraphDataset:
+    def _wrap_as_hetero_dataset(self, base_dataset: Dataset) -> H2DGSurvDataset:
         """
-        Wrap a base Dataset into HierarchicalDirectedSurvivalGraphDataset.
+        Wrap a base Dataset into H2DGSurvDataset.
         
         This preserves all preprocessed data and just changes __getitem__ behavior.
         """
-        hetero_dataset = HierarchicalDirectedSurvivalGraphDataset(
+        hetero_dataset = H2DGSurvDataset(
             max_tokens_history=base_dataset.max_tokens_history,
             max_tokens_surgery=base_dataset.max_tokens_surgery,
             max_tokens_report=base_dataset.max_tokens_report,

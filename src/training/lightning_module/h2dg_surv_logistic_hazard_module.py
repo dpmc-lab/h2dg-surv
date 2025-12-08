@@ -5,9 +5,9 @@ from torch_geometric.data import Batch as HeteroBatch
 from src.training.lightning_module.logistic_hazard_module import LogisticHazardModule
 
 
-class HierarchicalHeteroGNNLogisticHazardModule(LogisticHazardModule):
+class H2DGSurvLogisticHazardModule(LogisticHazardModule):
     """
-    Lightning Module for Hierarchical Heterogeneous GNN.
+    Lightning Module for the H2DGSurv model.
     
     Inherits all training logic from LogisticHazardModule.
     Only overrides batch unpacking and forward to handle PyG HeteroData format.

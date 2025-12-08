@@ -6,7 +6,7 @@ from typing import Literal, Tuple
 from transformers import AutoModel
 
 from src.data.datamodule.datamodule import HANCOCKDataModule
-from src.data.datamodule.hierarchical_directed_survival_graph_datamodule import HierarchicalDirectedSurvivalGraphDataModule
+from src.data.datamodule.h2dg_surv_datamodule import H2DGSurvDataModule
 
 
 def process_to_array(
@@ -38,7 +38,7 @@ def process_to_array(
     text_encoder.eval()
     
     # Handle HeteroGraph DataModule: use base datasets instead of graph-wrapped ones
-    if isinstance(datamodule, HierarchicalDirectedSurvivalGraphDataModule):
+    if isinstance(datamodule, H2DGSurvDataModule):
         if stage == "train":
             dataset = datamodule.base_train_dataset
         elif stage == "val":

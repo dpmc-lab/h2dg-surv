@@ -2,7 +2,7 @@ gpu_index: 0
 
 # Data configuration
 data:
-  datamodule_type: "HANCOCK_HierarchicalDirectedSurvivalGraph"
+  datamodule_type: "HANCOCK_H2DGSurv"
   data_root: "./data/HANCOCK"
   
   # Model paths
@@ -28,7 +28,7 @@ data:
 
 # Model configuration
 model:
-  name: "hierarchical_directed_survival_gnn_logistic_hazard"
+  name: "h2dg_surv"
   args:
     hidden_dim: 512                     # Hidden dimension for GNN layers
     num_heads: 4                        # Number of attention heads for GATv2Conv

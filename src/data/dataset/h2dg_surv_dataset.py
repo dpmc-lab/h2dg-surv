@@ -7,9 +7,9 @@ from torch_geometric.data import HeteroData
 from src.data.dataset.dataset import Dataset
 
 
-class HierarchicalDirectedSurvivalGraphDataset(Dataset):
+class H2DGSurvDataset(Dataset):
     """
-    PyG-compatible Dataset that creates hierarchical directed survival graphs.
+    PyG-compatible Dataset that creates the heterogeneous hierarchical directed survival graph (h2dg_surv).
     
     Graph structure follows clinical pathway:
     - Step 1: Diagnostic (clinical + blood)
@@ -292,7 +292,7 @@ class HierarchicalDirectedSurvivalGraphDataset(Dataset):
         return data
     
     def __getitem__(self, index: int) -> HeteroData:
-        """Get hierarchical directed survival graph for patient at index."""
+        """Get heterogeneous hierarchical directed survival graph for patient at index."""
         patient_id = self.samples[index]
         
         # Extract all features

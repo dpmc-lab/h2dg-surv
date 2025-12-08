@@ -6,10 +6,10 @@ from typing import Tuple, List, Optional
 from dataclasses import asdict
 
 from src.utils.config import Config, TrainingConfig
-from src.model.hierarchical_directed_survival_gnn_logistic_hazard import HierarchicalDirectedSurvivalGNNLogisticHazard
+from src.model.h2dg_surv_logistic_hazard import H2DGSurvLogisticHazard
 
 from src.training.lightning_module.base_module import BaseLightningModule
-from src.training.lightning_module.hetero_gnn_logistic_hazard_module import HierarchicalHeteroGNNLogisticHazardModule
+from src.training.lightning_module.h2dg_surv_logistic_hazard_module import H2DGSurvLogisticHazardModule
 
 from src.training.lightning_callback.progress_bar import CustomProgressBarCallback
 from src.training.lightning_callback.checkpoint import EnhancedModelCheckpoint
@@ -50,8 +50,8 @@ class TrainerFactory:
     @staticmethod
     def _create_lightning_module(training_config: TrainingConfig, model: nn.Module) -> BaseLightningModule:
         """Create Lightning Module from config by extracting explicit parameters."""        
-        if isinstance(model, HierarchicalDirectedSurvivalGNNLogisticHazard):
-            return HierarchicalHeteroGNNLogisticHazardModule(
+        if isinstance(model, H2DGSurvLogisticHazard):
+            return H2DGSurvLogisticHazardModule(
                 model=model,
                 **asdict(training_config.optimizer),
                 **asdict(training_config.scheduler),

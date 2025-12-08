@@ -3,7 +3,7 @@ from dataclasses import asdict
 
 from src.utils.config import DataConfig, TrainingConfig
 from src.data.datamodule.datamodule import HANCOCKDataModule
-from src.data.datamodule.hierarchical_directed_survival_graph_datamodule import HierarchicalDirectedSurvivalGraphDataModule
+from src.data.datamodule.h2dg_surv_datamodule import H2DGSurvDataModule
 
 
 class DataFactory:
@@ -33,9 +33,9 @@ class DataFactory:
         """
         datamodule_type = data_config.datamodule_type
         
-        if datamodule_type == "HANCOCK_HierarchicalDirectedSurvivalGraph":
-            print("Using HierarchicalDirectedSurvivalGraphDataModule (PyG hierarchical directed survival graphs)")
-            return HierarchicalDirectedSurvivalGraphDataModule(
+        if datamodule_type == "HANCOCK_H2DGSurv":
+            print("Using H2DGSurvDataModule (heterogeneous hierarchical directed survival graphs)")
+            return H2DGSurvDataModule(
                 **asdict(data_config),
                 **asdict(training_config),
                 **kwargs
@@ -56,4 +56,4 @@ class DataFactory:
     @staticmethod
     def get_supported_datasets() -> list:
         """Return list of supported dataset types."""
-        return ["HANCOCK", "HANCOCK_HierarchicalDirectedSurvivalGraph"]
+        return ["HANCOCK", "HANCOCK_H2DGSurv"]

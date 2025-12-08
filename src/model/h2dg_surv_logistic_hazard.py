@@ -6,9 +6,9 @@ from torch_geometric.utils import scatter
 from transformers import AutoModel
 
 
-class HierarchicalDirectedSurvivalGNNLogisticHazard(nn.Module):
+class H2DGSurvLogisticHazard(nn.Module):
     """
-    Hierarchical Directed Survival GNN for HANCOCK multimodal survival prediction.
+    H2DGSurv: Hierarchical Heterogeneous Directed Graph survival model for HANCOCK multimodal prediction.
     
     Architecture follows the clinical pathway with temporal progression:
     - Step 1: Diagnostic (clinical + blood)
@@ -33,7 +33,7 @@ class HierarchicalDirectedSurvivalGNNLogisticHazard(nn.Module):
         **kwargs
     ):
         """
-        Initialize Hierarchical Directed Survival GNN.
+        Initialize H2DGSurv model.
         
         Args:
             input_dims: Dictionary with input dimensions for each leaf node type
@@ -220,7 +220,7 @@ class HierarchicalDirectedSurvivalGNNLogisticHazard(nn.Module):
         self.hazard_head = nn.Sequential(*layers)
         
         # Log architecture
-        print(f"\n>>> HierarchicalDirectedSurvivalGNNLogisticHazard initialized:")
+        print(f"\n>>> H2DGSurvLogisticHazard initialized:")
         print(f"    - Architecture: Fully Heterogeneous (9 leaf types) + Temporal Steps")
         print(f"    - GNN hidden dim: {hidden_dim}")
         print(f"    - Layer 2: LayerNorm + Conv + Residual")
@@ -461,7 +461,7 @@ class HierarchicalDirectedSurvivalGNNLogisticHazard(nn.Module):
                 hidden_dims_info.append(f"{layer.in_features} -> {layer.out_features}")
         
         return (
-            f"\n--- HierarchicalDirectedSurvivalGNNLogisticHazard (FULLY HETEROGENEOUS) ---\n"
+            f"\n--- H2DGSurvLogisticHazard ---\n"
             f"  - Input dims: {self.input_dims}\n"
             f"  - GNN hidden dim: {self.hidden_dim}\n"
             f"  - Num heads: {self.num_heads}\n"
