@@ -72,8 +72,9 @@ def parse_args():
     build_folds_parser = subparsers.add_parser("folds", help="Build K-folds for Cross-Validation")
     build_folds_parser.add_argument("--data_root", type=str, default="./data/HANCOCK", help="Path of data")
     build_folds_parser.add_argument("--random_seed", type=int, default=42, help="Random seed to make folds")
-    build_folds_parser.add_argument("--n_folds", type=int, default=10, help="Number of folds")
-    build_folds_parser.add_argument("--val_ratio", type=float, default=0.2, help="Ratio of validation set from non-test data")
+    build_folds_parser.add_argument("--n_folds", type=int, default=5, help="Number of folds")
+    build_folds_parser.add_argument("--train_ratio", type=float, default=0.7, help="Ratio of train set from non-test data")
+    build_folds_parser.add_argument("--val_ratio", type=float, default=0.15, help="Ratio of validation set from non-test data")
 
     return parser.parse_args()
 
